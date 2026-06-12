@@ -128,11 +128,11 @@ export const Route = createFileRoute("/_stats/stats/teams")({
 			{ label: "Matches Played", key: "playedMatches" as const },
 			{ label: "Matches Won", key: "wonMatches" as const },
 			{ label: "Win Percentage", key: "winPercent" as const, format: (val: number) => `${val}%` },
-			{ label: "Team All-Out", key: "totalAllOuts" as const },
 			{ label: "Total Runs Scored", key: "totalRuns" as const },
 			{ label: "Total Balls Played", key: "totalBalls" as const },
 			{ label: "Total Wickets Fallen", key: "totalWickets" as const },
 			{ label: "Strike Rate", key: "strikeRate" as const, format: (val: number) => val.toFixed(2) },
+			{ label: "Team All-Out", key: "totalAllOuts" as const },
 			{ label: "Highest Score", key: "highestScore" as const },
 			{ label: "Lowest Score", key: "lowestScore" as const },
 		];
