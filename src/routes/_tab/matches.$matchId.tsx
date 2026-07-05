@@ -8,7 +8,7 @@ import { db } from "@/lib/db";
 import { formatDate } from "@/lib/utils";
 
 const getMatchById = createServerFn({ method: "GET" })
-	.inputValidator(z.object({ id: z.string() }))
+	.validator(z.object({ id: z.string() }))
 	.handler(async ({ data }) => {
 		const match = await db.matches.findUnique({ where: { id: Number(data.id) } });
 		if (!match) throw notFound();

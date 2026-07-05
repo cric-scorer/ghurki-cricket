@@ -33,7 +33,7 @@ type Filter = (typeof filters)[number];
 const filterSchema = z.enum(filters).optional().catch(undefined);
 
 const getBowlingStats = createServerFn({ method: "GET" })
-	.inputValidator(validateDate)
+	.validator(validateDate)
 	.handler(async ({ data }): Promise<BowlingStats[]> => {
 		const stats = await db.bowlers.groupBy({
 			by: ["playerId"],

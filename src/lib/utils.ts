@@ -1,10 +1,6 @@
-import { clsx, type ClassValue } from "clsx";
 import { format as dateFormatter } from "date-fns";
-import { twMerge } from "tailwind-merge";
 
-export function cn(...inputs: ClassValue[]) {
-	return twMerge(clsx(inputs));
-}
+export { cn, type ClassValue } from "cnfast";
 
 export function formatDate(date: string | Date | null | undefined, format: "eng" | "numeric" = "eng"): string {
 	if (!date) return "All Time";

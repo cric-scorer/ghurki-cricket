@@ -10,7 +10,7 @@ import { db } from "@/lib/db";
 import { type POTMStats } from "@/lib/types";
 
 const getPlayerOfMatchStats = createServerFn({ method: "GET" })
-	.inputValidator(validateDate)
+	.validator(validateDate)
 	.handler(async ({ data }): Promise<POTMStats[]> => {
 		const stats = await db.matches.groupBy({
 			by: ["potmId"],

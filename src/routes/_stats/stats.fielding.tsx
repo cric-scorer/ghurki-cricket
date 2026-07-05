@@ -10,7 +10,7 @@ import { db } from "@/lib/db";
 import { type FieldingStats } from "@/lib/types";
 
 const getFieldingStats = createServerFn({ method: "GET" })
-	.inputValidator(validateDate)
+	.validator(validateDate)
 	.handler(async ({ data }): Promise<FieldingStats[]> => {
 		const stats = await db.fielders.groupBy({
 			by: ["playerId"],

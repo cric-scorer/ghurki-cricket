@@ -1,6 +1,6 @@
 import type { ColumnDef } from "@tanstack/react-table";
 
-import { CalendarIcon } from "@hugeicons/core-free-icons";
+import { Calendar02Icon } from "@hugeicons/core-free-icons";
 import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 import { useState } from "react";
@@ -19,7 +19,7 @@ const yearSchema = z.object({
 });
 
 const getExpense = createServerFn({ method: "GET" })
-	.inputValidator(yearSchema)
+	.validator(yearSchema)
 	.handler(async ({ data }) => {
 		const expense = await db.expenses.findMany({
 			orderBy: { date: "desc" },
@@ -92,7 +92,7 @@ export const Route = createFileRoute("/_tab/expense/")({
 				title="Expense"
 				dateFilter={null}
 				filters={{
-					icon: CalendarIcon,
+					icon: Calendar02Icon,
 					value: year?.toString(),
 					onValueChange: (val) => navigate({ search: { year: val === "" ? undefined : Number(val) }, replace: true }),
 					options: [

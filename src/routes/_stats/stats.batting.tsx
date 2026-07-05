@@ -34,7 +34,7 @@ type Filter = (typeof filters)[number];
 const filterSchema = z.enum(filters).optional().catch(undefined);
 
 const getBattingStats = createServerFn({ method: "GET" })
-	.inputValidator(validateDate)
+	.validator(validateDate)
 	.handler(async ({ data }): Promise<BattingStats[]> => {
 		const stats = await db.batters.groupBy({
 			by: ["playerId"],

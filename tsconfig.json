@@ -1,13 +1,12 @@
 {
-	"include": ["**/*.ts", "**/*.tsx", "eslint.config.js", "prettier.config.js", "vite.config.js"],
+	"include": ["./src", "**/*.ts", "**/*.tsx", "eslint.config.js", "vite.config.js"],
 
 	"compilerOptions": {
-		"ignoreDeprecations": "6.0",
 		"target": "ES2024",
-		"jsx": "react-jsx",
 		"module": "ESNext",
+		"jsx": "react-jsx",
+		"types": ["node", "vite/client"],
 		"lib": ["ES2024", "DOM", "DOM.Iterable"],
-		"types": ["vite/client"],
 
 		/* Bundler mode */
 		"moduleResolution": "bundler",
@@ -16,10 +15,11 @@
 		"noEmit": true,
 
 		/* Linting */
-		"skipLibCheck": true,
 		"strict": true,
-		"baseUrl": ".",
+		"skipLibCheck": true,
+		"rootDir": ".",
 		"paths": {
+			"~/*": ["./*"],
 			"@/*": ["./src/*"]
 		}
 	}

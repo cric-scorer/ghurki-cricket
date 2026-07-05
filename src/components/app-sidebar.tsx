@@ -22,7 +22,10 @@ export function AppSidebar() {
 	return (
 		<Sidebar className="gap-0">
 			<SidebarHeader className="px-4 py-3">
-				<h1 className="text-center text-xl/9 font-semibold">Ghurki Cricket Club</h1>
+				<Link to="/" className="flex items-center justify-center gap-2">
+					<img src="/logo.svg" alt="logo" width={28} height={28} />
+					<h1 className="text-center text-xl font-semibold">Ghurki Cricket</h1>
+				</Link>
 			</SidebarHeader>
 			<SidebarContent>
 				<SidebarGroup>

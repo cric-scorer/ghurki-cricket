@@ -14,7 +14,7 @@ import { db } from "@/lib/db";
 import { ballsToOvers } from "@/lib/utils";
 
 const getTeamStats = createServerFn({ method: "GET" })
-	.inputValidator(validateDate)
+	.validator(validateDate)
 	.handler(async ({ data }): Promise<TeamStats[]> => {
 		const whereClause: InningsWhereInput = { match: { date: data } };
 

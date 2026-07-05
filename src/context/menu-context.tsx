@@ -16,10 +16,10 @@ import {
 	CommandSeparator,
 } from "@/components/ui/command";
 
-interface MenuProps {
+type MenuProps = {
 	isOpen: boolean;
 	toggleOpen: () => void;
-}
+};
 
 const MenuContext = createContext<MenuProps>({
 	isOpen: false,

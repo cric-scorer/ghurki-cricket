@@ -9,7 +9,7 @@ import { db } from "@/lib/db";
 import { ballsToOvers, cn } from "@/lib/utils";
 
 const getPlayerDetail = createServerFn({ method: "GET" })
-	.inputValidator(z.string())
+	.validator(z.string())
 	.handler(async ({ data: playerId }) => {
 		const [player, higherRatedCount] = await Promise.all([
 			db.players.findFirst({
