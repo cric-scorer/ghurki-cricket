@@ -145,5 +145,6 @@ model Expenses {
   date      DateTime @db.Date @id
   groundFee Int      @default(0)
   gearCost  Int      @default(0)
+  ground    String   @default("Mithu Indoor")
   @@map("expenses")
 }

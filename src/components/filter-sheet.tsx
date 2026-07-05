@@ -9,7 +9,7 @@ export type FilterSheetProps = {
 	icon?: IconSvgElement;
 	title?: string;
 	value?: string;
-	onValueChange?: (value: string) => void;
+	onValueChange?: (value: string | number) => void;
 	options: {
 		value: string;
 		label: string;

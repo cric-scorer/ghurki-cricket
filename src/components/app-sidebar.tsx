@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Link, useLocation } from "@tanstack/react-router";
+import { Link, useLocation, useSearch } from "@tanstack/react-router";
 
 import { PlayerAvatar } from "@/components/players/avatar";
 import { playerQueryOptions } from "@/components/players/query";
@@ -15,9 +15,9 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
-
 export function AppSidebar() {
 	const { pathname } = useLocation();
+	const { date, rivalry } = useSearch({ strict: false });
 	const { data: players } = useSuspenseQuery(playerQueryOptions());
 	return (
 		<Sidebar className="gap-0">
@@ -49,7 +49,7 @@ export function AppSidebar() {
 							{statsItems.map((item) => (
 								<SidebarMenuItem key={item.name}>
 									<SidebarMenuButton isActive={pathname.endsWith(item.url)} asChild>
-										<Link to={item.url}>
+										<Link to={item.url} search={{ date, rivalry }}>
 											<img src={item.icon} width={14} height={14} alt={item.name} className="aspect-square" />
 											<span>{item.name}</span>
 										</Link>

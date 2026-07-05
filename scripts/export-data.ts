@@ -104,7 +104,7 @@ async function exportToCSV() {
 					}
 					return strVal;
 				})
-				.join(",")
+				.join(","),
 		);
 
 		const csvContent = [csvHeader, ...csvRows].join("\n");

@@ -155,8 +155,8 @@ const getBattingSorting = (filter?: Filter) => {
 			return [{ id: "sixes", desc: true }];
 		case "most-ducks":
 			return [{ id: "ducks", desc: true }];
-			case "most-thirties":
-				return [{ id: "thirties", desc: true }];
+		case "most-thirties":
+			return [{ id: "thirties", desc: true }];
 		case "most-fifties":
 			return [{ id: "fifties", desc: true }];
 		case "four-ratio":
